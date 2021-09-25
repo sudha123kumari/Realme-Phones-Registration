@@ -962,7 +962,7 @@
     width: 25vw;
     height: 5vw;
   }
-  .container {
+  #register .container {
     width: 100%;
   }
   .container .RegisterText {
