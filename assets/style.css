@@ -962,6 +962,28 @@
     width: 25vw;
     height: 5vw;
   }
+  .container {
+    width: 100%;
+  }
+  .container .RegisterText {
+    font-size: 35px;
+  }
+  .container .registerSubtitle {
+    font-size: 13px;
+  }
+  .container .selectOptn {
+    font-size: 14px;
+    padding: 8px;
+    margin-left: 5px;
+  }
+  .container .labels {
+    font-size: 15px;
+  }
+}
+.RegisterText {
+  font-size: 65px;
+  font-weight: bolder;
+  letter-spacing: 0.5px;
 }
 .container {
   padding: 16px;
