@@ -100,7 +100,7 @@
   </div> -->
 
   <!-- script for NAVBAR -->
-  <script>
+  <!-- <script>
     const buttonRight = document.getElementById('slideRight');
     const buttonLeft = document.getElementById('slideLeft');
     buttonRight.onclick = function () {
@@ -109,7 +109,7 @@
     buttonLeft.onclick = function () {
       document.getElementById('container').scrollLeft -= 140;
     };
-  </script>
+  </script> -->
 
   <!--_____________SECOND SECTION________________-->
   <section class="second" id="second">
@@ -296,40 +296,40 @@
   </section>
 
   <section id="register" class="registerSection">
-    <form>
-      <div class="container">
-        <p class="RegisterText">Register</p>
-        <p class="registerSubtitle" style="margin-top: 10px;">GET REGISTERS TO GET MORE DETAILS</p>
-        <hr>
 
-        <label for="email"><b>Email</b></label>
-        <input type="email" placeholder="Enter Email" name="email" id="email" required>
-        <label class="labels" for="RAMS">Choose RAM:</label>
-        <select name="RAM" id="RAM" class="selectOptn">
-          <optgroup label="RAM">
-            <option value="3GB">3GB</option>
-            <option value="4GB">4GB</option>
-            <option value="6GB">6GB</option>
-            <option value="8GB">8GB</option>
-          </optgroup>
+    <div class="container">
+      <p class="RegisterText">Register</p>
+      <p class="registerSubtitle" style="margin-top: 10px;">GET REGISTERS TO GET MORE DETAILS</p>
+      <hr>
 
-        </select>
-        <br>
-        <div style="height:20px"></div>
-        <label class="labels" for="Storage" style="margin-top: 50px;">Choose Internal Storage:</label>
-        <select name="storage" id="storage" class="selectOptn">
+      <label for="email"><b>Email</b></label>
+      <input type="email" placeholder="Enter Email" name="email" id="email" required>
+      <label class="labels" for="RAMS">Choose RAM:</label>
+      <select name="RAM" id="RAM" class="selectOptn">
+        <optgroup label="RAM">
+          <option value="3GB">3GB</option>
+          <option value="4GB">4GB</option>
+          <option value="6GB">6GB</option>
+          <option value="8GB">8GB</option>
+        </optgroup>
 
-          <optgroup label="Internal Storage">
-            <option value="64GB">64GB</option>
-            <option value="128GB">128GB</option>
-          </optgroup>
-        </select>
-        <hr>
+      </select>
+      <br>
+      <div style="height:20px"></div>
+      <label class="labels" for="Storage" style="margin-top: 50px;">Choose Internal Storage:</label>
+      <select name="storage" id="storage" class="selectOptn">
 
-        <button type="submit" class="registerbtn" onclick="submit()">Register</button>
-      </div>
+        <optgroup label="Internal Storage">
+          <option value="64GB">64GB</option>
+          <option value="128GB">128GB</option>
+        </optgroup>
+      </select>
+      <hr>
 
-    </form>
+      <button type="submit" class="registerbtn" onclick="submit()">Register</button>
+    </div>
+
+
   </section>
 
 
@@ -359,12 +359,13 @@
 
 
   <script>
-    submit = async () => {
+    async function submit() {
       const email = document.getElementById("email").value;
       const e = document.getElementById("RAM");
       const RAM = e.options[e.selectedIndex].innerText;
       const d = document.getElementById("storage");
       const storage = d.options[d.selectedIndex].innerText;
+
 
       const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       const match = re.test(String(email).toLowerCase());
@@ -381,8 +382,8 @@
             "Content-type": "application/json; charset=UTF-8"
           }
         })
-          .than(response => response.json())
-          .than(json => {
+          .then(response => response.json())
+          .then(json => {
             console.log(json.user)
             alert(`Hello User, \nYour request for Realme 5, (${RAM}RAM and ${storage}Storage) is successfully recieved.\nYor registraion no. is ${json.user._id} and your allotment number is ${json.user.pid}`)
           }).catch(error => { alert("Some error occured,\nPlease try again") });
