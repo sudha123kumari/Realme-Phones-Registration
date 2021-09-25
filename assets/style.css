@@ -913,15 +913,15 @@
     margin-bottom: 20px;
     text-align: center;
   }
-  .s4BottomRightCardContent {
-    font-size: 3.5vw;
+   .s4BottomRightCard .s4BottomRightCardContent {
+    font-size: 4vw;
     line-height: 5vw;
   }
   .s4BottomRightCardContentLink {
     margin-top: 10px;
   }
   .s4BottomRightCardContentLink a {
-    font-size: 3.5vw;
+    font-size: 4vw;
     line-height: 4vw;
   }
 
