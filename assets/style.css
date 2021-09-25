@@ -839,6 +839,7 @@
     height: 100%;
     width: 100%;
     margin: 0%;
+    margin-top: 10px;
   }
 
   /* four section */
@@ -962,8 +963,8 @@
     width: 25vw;
     height: 5vw;
   }
-  #register .container {
-    width: 100%;
+  .registerSection .container {
+    width: 90%;
   }
   .container .RegisterText {
     font-size: 35px;
