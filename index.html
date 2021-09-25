@@ -381,8 +381,8 @@
             "Content-type": "application/json; charset=UTF-8"
           }
         })
-          .then(response => response.json())
-          .then(json => {
+          .than(response => response.json())
+          .than(json => {
             console.log(json.user)
             alert(`Hello User, \nYour request for Realme 5, (${RAM}RAM and ${storage}Storage) is successfully recieved.\nYor registraion no. is ${json.user._id} and your allotment number is ${json.user.pid}`)
           }).catch(error => { alert("Some error occured,\nPlease try again") });
